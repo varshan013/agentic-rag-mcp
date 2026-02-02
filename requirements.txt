@@ -1,0 +1,14 @@
+streamlit
+fastapi
+uvicorn
+requests
+pymilvus
+sentence-transformers
+langchain
+langchain-community
+langchain-core
+python-dotenv
+pandas
+python-docx
+python-pptx
+
