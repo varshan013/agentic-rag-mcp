@@ -9,18 +9,18 @@ from pymilvus import (
 from sentence_transformers import SentenceTransformer
 from app.config import MILVUS_HOST, MILVUS_PORT, COLLECTION_NAME, EMBEDDING_MODEL
 
-# ------------------ Connection ------------------
+#  Connection 
 connections.connect(
     alias="default",
     host=MILVUS_HOST,
     port=MILVUS_PORT
 )
 
-# ------------------ Embedding Model ------------------
+# Embedding Model 
 model = SentenceTransformer(EMBEDDING_MODEL)
 DIMENSION = 384  # all-MiniLM-L6-v2
 
-# ------------------ Collection Utils ------------------
+# Collection Utils 
 def reset_collection():
     """
     Drops existing collection to avoid stale / mixed context.
@@ -88,7 +88,7 @@ def create_index(collection):
     )
 
 
-# ------------------ Insert Documents ------------------
+# Insert Documents 
 def insert_documents(chunks):
     """
     Insert chunked documents into Milvus.
