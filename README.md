@@ -60,6 +60,7 @@ Streamlit
 Docker
 
 ⚙️ Setup Instructions
+
 1️. Start Milvus
 docker compose -f docker/milvus.yml up -d
 
@@ -76,4 +77,5 @@ Key Design Decisions
 2.Critic agent to reduce hallucinations
 
 3.Reset vector store per ingestion for clean grounding
+
 
