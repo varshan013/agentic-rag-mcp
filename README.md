@@ -71,8 +71,9 @@ streamlit run app/ui/streamlit_app.py --server.fileWatcherType none
 
 Key Design Decisions
 
-Agentic orchestration instead of monolithic RAG
+1.Agentic orchestration instead of monolithic RAG
 
-Critic agent to reduce hallucinations
+2.Critic agent to reduce hallucinations
 
-Reset vector store per ingestion for clean grounding
+3.Reset vector store per ingestion for clean grounding
+
