@@ -10,7 +10,7 @@ class CriticAgent:
         query_lower = user_query.lower()
         answer_lower = generated_answer.lower()
 
-        # -------- 1. Detect descriptive intent --------
+        #  1. Detect descriptive intent
         descriptive_starters = [
             "what is",
             "what are",
@@ -26,7 +26,7 @@ class CriticAgent:
 
         is_descriptive = any(query_lower.startswith(k) for k in descriptive_starters)
 
-        # -------- 2. Collect retrieved context --------
+        #  2. Collect retrieved context
         retrieved_text = []
 
         for item in execution_results.get("execution_results", []):
@@ -44,14 +44,14 @@ class CriticAgent:
                 "reason": "No retrieved context available"
             }
 
-        # -------- 3. Descriptive queries --------
+        #  3. Descriptive queries
         if is_descriptive:
             return {
                 "approved": True,
                 "reason": "Descriptive query – semantic summary allowed"
             }
 
-        # -------- 4. Factual queries --------
+        #  4. Factual queries 
         factual_overlap = any(
             sentence.strip() in combined_context
             for sentence in answer_lower.split(".")
