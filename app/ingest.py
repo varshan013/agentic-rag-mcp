@@ -27,7 +27,7 @@ def ingest_file(file_path: str, filename: str) -> dict:
     """
 
     try:
-        # 🔥 IMPORTANT: Clear old vectors to avoid mixed retrieval
+        
         reset_collection()
 
         filename = filename.lower()
@@ -50,13 +50,13 @@ def ingest_file(file_path: str, filename: str) -> dict:
         else:
             raise ValueError(f"Unsupported file type: {filename}")
 
-        # ---- Chunk documents ----
+       
         chunks = chunk_documents(docs)
 
         if not chunks:
             raise ValueError("No chunks generated from document")
 
-        # ---- Insert into vector store ----
+        
         insert_documents(chunks)
 
         return {
